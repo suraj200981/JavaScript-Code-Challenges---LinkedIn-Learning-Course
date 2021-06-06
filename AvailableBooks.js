@@ -22,36 +22,38 @@ class Book {
     }
 
     //Availability function
- getAvailability() {
-    if (this.numCopies == 0) {
-        return "out of stock"
-    } else if (this.numCopies < 10) {
-        return "low stock"
-    } else {
-        return "In stock"
+    getAvailability() {
+        if (this.numCopies == 0) {
+            return "out of stock"
+        } else if (this.numCopies < 10) {
+            return "low stock"
+        } else {
+            return "In stock"
+        }
     }
-}
-}
+
+    restock(restockVal) {
+        this.numCopies +=restockVal;
+    }
+
+    //Selling books functions
+    sell(numSold) {
+        this.numCopies -=numSold;
+       
+    }
 
 
-
-
-//Selling books functions
-function sell(numSold, numberOfCopies) {
-    var newVal;
-    newVal = numberOfCopies - numSold;
-
-    return newVal;
-}
-
-function restock(restockVal){
-
-    return restockVal;
 }
 
-let HarryPotter = new Book("Harry Potter And The Chamber Of Secrets", "JK Rowling", "133-92-95-12-301", 100);
+
+
+//let HarryPotter = new Book("Harry Potter And The Chamber Of Secrets", "JK Rowling", "133-92-95-12-301", 100);
 let BookOfGod = new Book("Religon and God", "David Collins", "3193-13-13-313-12", 0);
-let DiaryOfAKid = new Book("Diary Of A Whimpy Kid", "Suraj Sharma", "38913-1344-2432-12", 9);
+//let DiaryOfAKid = new Book("Diary Of A Whimpy Kid", "Suraj Sharma", "38913-1344-2432-12", 9);
 
-console.log("Title: "+HarryPotter.title);
-console.log("Copies left: "+HarryPotter.getAvailability());
+console.log("Title: " + BookOfGod.title);
+console.log("Copies left: " + BookOfGod.getAvailability());
+BookOfGod.restock(12);
+console.log("After restock: " + BookOfGod.getAvailability());
+
+
