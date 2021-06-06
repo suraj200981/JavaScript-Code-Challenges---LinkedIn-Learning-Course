@@ -5,9 +5,7 @@ class Movie {
         this.genre = genre;
         this.releaseYear = releaseYear;
         this.rating = rating;
-
     }
-
 
     getOverview() {
         console.log("Movie: " + this.title);
@@ -15,7 +13,6 @@ class Movie {
         console.log("Director: " + this.director);
         console.log("Release year: " + this.releaseYear);
         console.log("Rating: " + this.rating);
-
     }
 }
 
